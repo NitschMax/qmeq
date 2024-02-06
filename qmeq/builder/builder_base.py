@@ -332,7 +332,7 @@ class BuilderManyBody(BuilderBase):
                  kerntype='Pauli', symq=True, norm_row=0, solmethod=None,
                  itype=0, dqawc_limit=10000, mfreeq=False, phi0_init=None,
                  mtype_qd=complex, mtype_leads=complex,
-                 symmetry=None, herm_hs=True, herm_c=False, m_less_n=True):
+                 symmetry=None, herm_hs=True, herm_c=False, m_less_n=True, countingleads=[0]):
 
         nleads = Tba.shape[0] if Tba is not None else 0
 
@@ -343,7 +343,7 @@ class BuilderManyBody(BuilderBase):
             itype=itype, dqawc_limit=dqawc_limit, mfreeq=mfreeq, phi0_init=phi0_init,
             mtype_qd=mtype_qd, mtype_leads=mtype_leads,
             symmetry=symmetry, herm_hs=herm_hs, herm_c=herm_c, m_less_n=m_less_n,
-            indexing='charge')
+            indexing='charge', countingleads=countingleads)
 
         self._init_state_indexing(Na, Ea)
 
