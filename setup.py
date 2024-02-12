@@ -53,7 +53,7 @@ def get_ext_modules():
         # print('using cythonize to generate C files')
 
     ext = []
-    openmp_flag = '-fopenmp' if os.name == 'posix' else '/openmp'
+    # openmp_flag = '-fopenmp' if os.name == 'posix' else '/openmp'
     for file_no_ext in file_list:
         file_base = file_no_ext[:-2]
         file_name = file_base + file_ext
@@ -62,8 +62,8 @@ def get_ext_modules():
             Extension(
                 module_name,
                 [file_name],
-                extra_compile_args=[openmp_flag],
-                extra_link_args=[openmp_flag],
+                extra_compile_args=[],
+                extra_link_args=[],
             )
         )
 
